@@ -12,7 +12,7 @@ Clone the Hello World application from the GitHub repository into a working dire
 ## Application Installation 
 
 ### Install initial python dependencies
-Skip this step if you already have Python 3 and virtualenv on your machine.
+Jump to 'Install application requirements' if you already have Python 3 and virtualenv on your machine.
 
 ##### For Linux users: 
 Run below commands, use 'sudo' as required. 
@@ -40,17 +40,16 @@ Run below commands, use 'sudo' as required.
 
 
 ### Install application requirements
-- Create a new python virtual environment
+- Create a new python virtual environment.
 ```
     $ virtualenv -p python3 helloworld_venv --no-site-packages
     $ source helloworld_venv/bin/activate
 ```
-- Install all application requirements, use 'sudo' as required
-
-
+- Install all application requirements.
+```
     $ pip install -r requirements.txt
-    
-- Confirm requirements are installed correctly
+```    
+- Confirm requirements are installed correctly.
 ```
     $ pip list | grep Django
     Django     3.0.8
@@ -72,7 +71,7 @@ order to change the logging level -
 
     $ python manage.py runserver
     
-Go to http://127.0.0.1:8000 in a browser you should see a Hello, World! message.
+Go to http://127.0.0.1:8000 in a browser you should see a `Hello, World` message.
 
 ## Using the application from command line
 - Open a new terminal and try out the below examples
@@ -84,7 +83,7 @@ Go to http://127.0.0.1:8000 in a browser you should see a Hello, World! message.
     $ curl http://localhost:8000 -H "Accept:"
     <p>Hello, World</p>
     
-    $ curl http://localhost:8000 --H "Accept: application/json"
+    $ curl http://localhost:8000 -H "Accept: application/json"
     {"message": "Hello, World"}
 ```
 - Example POST calls
@@ -98,7 +97,7 @@ Go to http://127.0.0.1:8000 in a browser you should see a Hello, World! message.
 ## Testing
 - Open a new terminal
 ```
-    $ cd ~/Desktop/helloworld/helloworld_project
+    $ cd ~/Desktop/helloworld
     $ source helloworld_venv/bin/activate
 ```  
 
