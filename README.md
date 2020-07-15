@@ -86,21 +86,21 @@ Go to http://127.0.0.1:8000 in a browser you should see a `Hello, World` message
 - Open a new terminal and try out the below examples
 - Example GET calls
 ```
-    $ curl http://localhost:8000
+    $ curl http://127.0.0.1:8000
     Hello, World
     
-    $ curl http://localhost:8000 -H "Accept:"
+    $ curl http://127.0.0.1:8000 -H "Accept:"
     <p>Hello, World</p>
     
-    $ curl http://localhost:8000 -H "Accept: application/json"
+    $ curl http://127.0.0.1:8000 -H "Accept: application/json"
     {"message": "Hello, World"}
 ```
 - Example POST calls
 ```
-    $ curl http://localhost:8000 -d '{"username":"xyz"}'
+    $ curl http://127.0.0.1:8000 -d '{"username":"xyz"}'
     Post successful!
     
-    $ curl http://localhost:8000 -d ''
+    $ curl http://127.0.0.1:8000 -d ''
     {"error": "Data cannot be empty"}
 ```
 ## Testing
@@ -114,7 +114,17 @@ Go to http://127.0.0.1:8000 in a browser you should see a `Hello, World` message
 
 - Execute unit tests
 ```
-    $ python manage.py test 
+    $ python manage.py test
+    Creating test database for alias 'default'...
+    System check identified no issues (0 silenced).
+    Bad Request: /
+    ...Bad Request: /
+    ..
+    ----------------------------------------------------------------------
+    Ran 5 tests in 0.012s
+    
+    OK
+    Destroying test database for alias 'default'...
 ```    
 [Helloworld app]: https://github.com/himakoppu/helloworld/archive/master.zip
 [Install Homebrew]: https://osxdaily.com/2018/03/07/how-install-homebrew-mac-os

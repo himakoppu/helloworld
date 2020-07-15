@@ -10,14 +10,19 @@ TIMESTAMP_FORMAT = "%Y-%m-%d %H:%M:%S"
 
 
 def get_timestamp():
+    """ Returns current date and time in a human-readable format.
+
+     Returns:
+         str: current date and time
+     """
     return datetime.now().strftime(TIMESTAMP_FORMAT)
 
 
 class LandingView(View):
     def get(self, request, *args, **kwargs):
-
         logger.debug("{}: Received a {} request at URL: {}"
                      .format(get_timestamp(), request.method, request.build_absolute_uri()))
+
         if request.headers and "Accept" in request.headers:
             if request.headers["Accept"] == "application/json":
                 message = {"message": "Hello, World"}
@@ -30,7 +35,6 @@ class LandingView(View):
             return HttpResponse(message, content_type="text/html")
 
     def post(self, request, *args, **kwargs):
-
         logger.debug("{}: Received a {} request at URL: {}"
                      .format(get_timestamp(), request.method, request.build_absolute_uri()))
 
